@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
+const exec = require('child_process').exec;
 const webpack = require('webpack-stream');
 var serverFiles = ['lib/**/*.js', 'test/**/*test.js', 'gulpfile.js',
                 'index.js', 'server.js'];
@@ -35,6 +36,10 @@ gulp.task('static_dev', () => {
 gulp.task('css_dev', () => {
   return gulp.src('app/css/**/*.css')
   .pipe(gulp.dest('./build'));
+});
+
+gulp.task('protractor', () => {
+
 });
 
 gulp.task('lint', ['lint_client', 'lint_server']);
