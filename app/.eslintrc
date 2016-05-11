@@ -2,6 +2,7 @@
   "env": {
     "browser": true,
     "protractor": true,
+    "jasmine": true,
     "es6": true
   },
   "globals": {
