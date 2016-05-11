@@ -25,6 +25,11 @@ gulp.task('static_dev', () => {
     .pipe(gulp.dest('./build'));
 });
 
-gulp.task('build_dev', ['webpack_dev', 'static_dev']);
+gulp.task('css_dev', () => {
+  return gulp.src('app/css/**/*.css')
+  .pipe(gulp.dest('./build'));
+});
+
+gulp.task('build_dev', ['webpack_dev', 'static_dev', 'css_dev']);
 
 gulp.task('default', ['build_dev']);
